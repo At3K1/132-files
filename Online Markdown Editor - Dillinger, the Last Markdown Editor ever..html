@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://dillinger.io/ -->
+<html lang="en" ng-strict-di=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Online Markdown Editor - Dillinger, the Last Markdown Editor ever.</title>
+<meta name="description" content="Dillinger is an online cloud based HTML5 filled
+  Markdown Editor. Sync with Dropbox, Github, Google Drive or OneDrive.
+  Convert HTML to Markdown. 100% Open Source!">
+<meta name="keywords" content="Markdown, Dillinger, Editor, ACE, Github, Open Source, Node.js">
+<meta name="author" content="Joe McCann and Martin Broder">
+<link rel="apple-touch-icon" href="https://dillinger.io/apple-touch-icon.png">
+
+
+<meta name="robots" content="noodp, noydir">
+
+<meta name="google-site-verification" content="DAyGOgtsg8rJpq9VVktKzDkQ1UhXm1FYl8SD47hPkjA">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="320">
+<meta http-equiv="cleartype" content="on">
+<link href="./Online Markdown Editor - Dillinger, the Last Markdown Editor ever._files/css" rel="stylesheet" type="text/css">
+<link href="./Online Markdown Editor - Dillinger, the Last Markdown Editor ever._files/css(1)" rel="stylesheet" type="text/css">
+<link href="./Online Markdown Editor - Dillinger, the Last Markdown Editor ever._files/app.css" rel="stylesheet">
+<script type="text/javascript">
+   var trackOutboundLink = function(url) {
+    ga('send', 'event', 'outbound', 'click', url, {
+      'transport': 'beacon',
+      'hitCallback': function(){window.open(url);}
+    });
+    }
+  </script>
+<style id="ace_editor.css">.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;min-width: 100%;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;text-indent: -1em;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: inherit;color: inherit;z-index: 1000;opacity: 1;text-indent: 0;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-webkit-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-webkit-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-webkit-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_text-input-ios {position: absolute !important;top: -100000px !important;left: -100000px !important;}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><script src="./Online Markdown Editor - Dillinger, the Last Markdown Editor ever._files/theme-github.js.Без названия"></script></head>
+<body ng-controller="Base" file-import-drop-target="" class="ng-scope open-menu" style="overflow: hidden;">
+<input type="file" accept=".md,.markdown,text/html" file-import-choose-file="" style="display: none;">
+<form method="POST" id="downloader" class="ng-pristine ng-valid">
+<input type="hidden" name="name" autocomplete="off">
+<input type="hidden" name="unmd" autocomplete="off">
+<input type="hidden" name="formatting" autocomplete="off">
+<input type="hidden" name="preview" autocomplete="off">
+</form>
+
+<ul class="settings ng-scope" role="menu" ng-controller="User as user">
+<li>
+<a ng-click="user.toggleAutoSave($event)">
+<span class="has-checkbox">Auto Save</span>
+<span class="toggle-auto-save switch ng-isolate-scope checked" ng-class="{checked: toggleValue}" value="user.profile.enableAutoSave">
+  <input type="checkbox" ng-model="toggleValue" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+  <small></small>
+</span>
+</a>
+</li>
+<li>
+<a ng-click="user.toggleWordsCount($event)">
+<span class="has-checkbox">Word Count</span>
+<span class="toggle-word-count switch ng-isolate-scope checked" ng-class="{checked: toggleValue}" value="user.profile.enableWordsCount">
+  <input type="checkbox" ng-model="toggleValue" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+  <small></small>
+</span>
+</a>
+</li>
+<li>
+<a ng-click="user.toggleCharactersCount($event)">
+<span class="has-checkbox">Character Count</span>
+<span class="toggle-character-count switch ng-isolate-scope checked" ng-class="{checked: toggleValue}" value="user.profile.enableCharactersCount">
+  <input type="checkbox" ng-model="toggleValue" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+  <small></small>
+</span>
+</a>
+</li>
+<li>
+<a ng-click="user.toggleScrollSync($event)">
+<span class="has-checkbox">Scroll Sync</span>
+<span class="toggle-scroll-sync switch ng-isolate-scope checked" ng-class="{checked: toggleValue}" value="user.profile.enableScrollSync">
+  <input type="checkbox" ng-model="toggleValue" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+  <small></small>
+</span>
+</a>
+</li>
+<li>
+<a><form class="ng-pristine ng-valid ng-valid-min">
+<span>Tab Size</span>
+<input type="number" ng-model="tabsize" min="1" ng-change="user.storeTabSize()" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min">
+</form></a>
+</li>
+<li>
+<a><form class="ng-pristine ng-valid">
+<span>Keybindings</span>
+<select ng-model="keybindings" ng-change="user.storeKeybindings()" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+<!-- ngRepeat: (key, value) in allKeybindings --><option ng-repeat="(key, value) in allKeybindings" value="Ace" class="ng-binding ng-scope" selected="selected">Ace</option><!-- end ngRepeat: (key, value) in allKeybindings --><option ng-repeat="(key, value) in allKeybindings" value="Vim" class="ng-binding ng-scope">Vim</option><!-- end ngRepeat: (key, value) in allKeybindings --><option ng-repeat="(key, value) in allKeybindings" value="Emacs" class="ng-binding ng-scope">Emacs</option><!-- end ngRepeat: (key, value) in allKeybindings -->
+</select>
+</form></a>
+</li>
+
+<li>
+<a target="_blank" href="https://www.markdownguide.org/">
+<span>Markdown Help</span>
+</a>
+</li>
+<li>
+<a class="toggle-wtf" ng-click="user.showAbout($event)">
+<span>WTF is Dillinger?</span>
+</a>
+</li>
+<li>
+<a class="toggle-reset" ng-click="user.resetProfile($event)">
+<span>Reset Profile</span>
+</a>
+</li>
+</ul>
+<div class="wrapper">
+<div class="sidebar-wrapper">
+<div class="sidebar ng-scope" ng-controller="Documents as document">
+<h2 class="sidebar-branding">
+<svg viewBox="0 0 85 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g id="Desktop---Save-to" sketch:type="MSArtboardGroup" transform="translate(-92.000000, -58.000000)" fill="#FFFFFF">
+<g id="Navigation" sketch:type="MSLayerGroup" transform="translate(0.000000, 38.000000)">
+<g id="Menu-Item:-Branding" transform="translate(91.000000, 17.000000)" sketch:type="MSShapeGroup">
+<path d="M1.17,13 L4.563,13 C7.423,13 9.399,11.011 9.399,8.45 L9.399,8.424 C9.399,5.863 7.423,3.9 4.563,3.9 L1.17,3.9 L1.17,13 Z M2.769,11.544 L2.769,5.356 L4.563,5.356 C6.474,5.356 7.722,6.669 7.722,8.45 L7.722,8.476 C7.722,10.257 6.474,11.544 4.563,11.544 L2.769,11.544 Z M13.047,13 L14.646,13 L14.646,3.9 L13.047,3.9 L13.047,13 Z M18.697,13 L25.08,13 L25.08,11.544 L20.296,11.544 L20.296,3.9 L18.697,3.9 L18.697,13 Z M28.364,13 L34.747,13 L34.747,11.544 L29.963,11.544 L29.963,3.9 L28.364,3.9 L28.364,13 Z M38.122,13 L39.721,13 L39.721,3.9 L38.122,3.9 L38.122,13 Z M43.772,13 L45.345,13 L45.345,6.526 L50.363,13 L51.702,13 L51.702,3.9 L50.129,3.9 L50.129,10.192 L45.254,3.9 L43.772,3.9 L43.772,13 Z M59.978,13.156 C61.59,13.156 62.877,12.506 63.774,11.739 L63.774,7.917 L59.9,7.917 L59.9,9.308 L62.227,9.308 L62.227,11.011 C61.668,11.427 60.888,11.7 60.03,11.7 C58.171,11.7 56.936,10.322 56.936,8.45 L56.936,8.424 C56.936,6.682 58.21,5.213 59.887,5.213 C61.044,5.213 61.733,5.59 62.435,6.188 L63.449,4.979 C62.513,4.186 61.538,3.744 59.952,3.744 C57.209,3.744 55.259,5.902 55.259,8.45 L55.259,8.476 C55.259,11.128 57.131,13.156 59.978,13.156 Z M67.474,13 L74.286,13 L74.286,11.57 L69.073,11.57 L69.073,9.126 L73.636,9.126 L73.636,7.696 L69.073,7.696 L69.073,5.33 L74.221,5.33 L74.221,3.9 L67.474,3.9 L67.474,13 Z M77.804,13 L79.403,13 L79.403,9.828 L81.405,9.828 L83.641,13 L85.526,13 L83.069,9.555 C84.343,9.191 85.24,8.294 85.24,6.799 L85.24,6.773 C85.24,5.98 84.967,5.304 84.486,4.81 C83.901,4.238 83.004,3.9 81.86,3.9 L77.804,3.9 L77.804,13 Z M79.403,8.411 L79.403,5.356 L81.73,5.356 C82.913,5.356 83.615,5.889 83.615,6.864 L83.615,6.89 C83.615,7.813 82.887,8.411 81.743,8.411 L79.403,8.411 Z" id="DILLINGER-2"></path>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</h2>
+<nav class="nav nav-sidebar">
+<ul class="menu menu-sidebar">
+<li class="menu-item menu-item--link-unlink in-sidebar">
+<a class="menu-link" ng-click="document.status.linkUnlink = !document.status.linkUnlink">
+<span>Services</span> <span class="caret"></span></a>
+<ul class="sidebar-list collapse" collapse="document.status.linkUnlink" style="height: 0px;">
+<li>
+<a href="https://dillinger.io/redirect/dropbox" class="import-dropbox unlinked">Link with
+<span>Dropbox</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Bitbucket as bitbucket" class="ng-scope">
+<a class="import-bitbucket unlinked" href="https://dillinger.io/redirect/bitbucket">Link with
+<span>Bitbucket</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Github as github" class="ng-scope">
+<a class="import-github unlinked" ng-click="github.chooseScope()">Link with
+<span>Github</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li>
+<a href="https://dillinger.io/redirect/medium" class="import-medium unlinked">Link with
+<span>Medium</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li>
+<a href="https://dillinger.io/redirect/googledrive" class="import-google-drive unlinked">Link with
+<span>Google Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li>
+<a href="https://dillinger.io/redirect/onedrive" class="import-one-drive unlinked">Link with
+<span>One Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--save-to in-sidebar">
+<a class="menu-link" ng-click="document.status.save = !document.status.save">
+<span>Save to</span> <span class="caret"></span></a>
+<ul class="sidebar-list collapse" collapse="document.status.save" style="height: 0px;">
+<li ng-controller="Dropbox as dropbox" class="ng-scope">
+<a href="https://dillinger.io/redirect/dropbox" class="import-dropbox unlinked">
+<span>Dropbox</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+
+<li ng-controller="Github as github" class="ng-scope">
+<a class="import-github unlinked" ng-click="github.chooseScope()">
+<span>Github</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Medium as medium" class="ng-scope">
+<a href="https://dillinger.io/redirect/medium" class="import-medium unlinked">
+<span>Medium</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Googledrive as googledrive" class="ng-scope">
+<a href="https://dillinger.io/redirect/googledrive" class="import-google-drive unlinked">
+<span>Google Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Onedrive as onedrive" class="ng-scope">
+<a href="https://dillinger.io/redirect/onedrive" class="import-one-drive unlinked">
+<span>One Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--import-from in-sidebar">
+<a class="menu-link" ng-click="document.status.import = !document.status.import">
+<span>Import from</span> <span class="caret"></span></a>
+<ul class="sidebar-list collapse" collapse="document.status.import" style="height: 0px;">
+<li ng-controller="Dropbox as dropbox" class="ng-scope">
+<a href="https://dillinger.io/redirect/dropbox" class="import-dropbox unlinked">
+<span>Dropbox</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Bitbucket as bitbucket" class="ng-scope">
+<a class="import-bitbucket unlinked" href="https://dillinger.io/redirect/bitbucket">
+<span>Bitbucket</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Github as github" class="ng-scope">
+<a class="import-github unlinked" ng-click="github.chooseScope()">
+<span>Github</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Googledrive as googledrive" class="ng-scope">
+<a href="https://dillinger.io/redirect/googledrive" class="import-google-drive unlinked">
+<span>Google Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Onedrive as onedrive" class="ng-scope">
+<a href="https://dillinger.io/redirect/onedrive" class="import-one-drive unlinked">
+<span>One Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="ImportFile as importFile" class="ng-scope">
+<a class="linked" ng-click="choose()">
+<span>Markdown File</span>
+</a>
+</li>
+<li ng-controller="ImportFile as importFile" class="ng-scope">
+<a class="linked" ng-click="choose(&#39;html&#39;)">
+<span>HTML File</span>
+</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--documents in-sidebar">
+<a class="menu-link" ng-click="document.status.document = !document.status.document">
+<span>Documents</span> <span class="caret"></span></a>
+<ul class="documents sidebar-list collapse in" collapse="document.status.document" role="menu" style="height: auto;">
+<!-- ngRepeat: document in documents track by document.id --><li ng-repeat="document in documents track by document.id" ng-class="{
+    &#39;active&#39;: currentDocument.id === document.id,
+    &#39;octocat&#39;: document.isGithubFile
+    }" class="ng-scope">
+<a ng-click="selectDocument(document)" class="ng-binding">Matvey Kramarenko.md</a>
+</li><!-- end ngRepeat: document in documents track by document.id --><li ng-repeat="document in documents track by document.id" ng-class="{
+    &#39;active&#39;: currentDocument.id === document.id,
+    &#39;octocat&#39;: document.isGithubFile
+    }" class="ng-scope">
+<a ng-click="selectDocument(document)" class="ng-binding">Знак копирайта — Википедия.html</a>
+</li><!-- end ngRepeat: document in documents track by document.id --><li ng-repeat="document in documents track by document.id" ng-class="{
+    &#39;active&#39;: currentDocument.id === document.id,
+    &#39;octocat&#39;: document.isGithubFile
+    }" class="ng-scope active">
+<a ng-click="selectDocument(document)" class="ng-binding">ODEGOV ILYA.md</a>
+</li><!-- end ngRepeat: document in documents track by document.id --><li ng-repeat="document in documents track by document.id" ng-class="{
+    &#39;active&#39;: currentDocument.id === document.id,
+    &#39;octocat&#39;: document.isGithubFile
+    }" class="ng-scope">
+<a ng-click="selectDocument(document)" class="ng-binding">Untitled Document.md</a>
+</li><!-- end ngRepeat: document in documents track by document.id --><li ng-repeat="document in documents track by document.id" ng-class="{
+    &#39;active&#39;: currentDocument.id === document.id,
+    &#39;octocat&#39;: document.isGithubFile
+    }" class="ng-scope">
+<a ng-click="selectDocument(document)" class="ng-binding">Лецкий</a>
+</li><!-- end ngRepeat: document in documents track by document.id -->
+</ul>
+</li>
+</ul>
+</nav>
+<a class="btn btn--new" ng-click="createDocument()">New Document</a>
+<a class="btn btn--save" ng-click="saveDocument(true)">Save Session</a>
+<!-- ngIf: documents.length > 1 --><a class="btn btn--delete ng-scope" ng-click="removeDocument(currentDocument)" ng-if="documents.length &gt; 1">Delete Document</a><!-- end ngIf: documents.length > 1 -->
+</div>
+</div>
+<div class="notification-container">
+<div class="notification"></div>
+</div>
+<div class="page">
+<div class="navbar">
+<a class="toggle">
+  <span></span>
+</a>
+<h1 class="navbar-brand">
+<a class="brand" href="https://dillinger.io/"><svg viewBox="0 0 85 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g id="Desktop---Save-to" sketch:type="MSArtboardGroup" transform="translate(-92.000000, -58.000000)" fill="#FFFFFF">
+<g id="Navigation" sketch:type="MSLayerGroup" transform="translate(0.000000, 38.000000)">
+<g id="Menu-Item:-Branding" transform="translate(91.000000, 17.000000)" sketch:type="MSShapeGroup">
+<path d="M1.17,13 L4.563,13 C7.423,13 9.399,11.011 9.399,8.45 L9.399,8.424 C9.399,5.863 7.423,3.9 4.563,3.9 L1.17,3.9 L1.17,13 Z M2.769,11.544 L2.769,5.356 L4.563,5.356 C6.474,5.356 7.722,6.669 7.722,8.45 L7.722,8.476 C7.722,10.257 6.474,11.544 4.563,11.544 L2.769,11.544 Z M13.047,13 L14.646,13 L14.646,3.9 L13.047,3.9 L13.047,13 Z M18.697,13 L25.08,13 L25.08,11.544 L20.296,11.544 L20.296,3.9 L18.697,3.9 L18.697,13 Z M28.364,13 L34.747,13 L34.747,11.544 L29.963,11.544 L29.963,3.9 L28.364,3.9 L28.364,13 Z M38.122,13 L39.721,13 L39.721,3.9 L38.122,3.9 L38.122,13 Z M43.772,13 L45.345,13 L45.345,6.526 L50.363,13 L51.702,13 L51.702,3.9 L50.129,3.9 L50.129,10.192 L45.254,3.9 L43.772,3.9 L43.772,13 Z M59.978,13.156 C61.59,13.156 62.877,12.506 63.774,11.739 L63.774,7.917 L59.9,7.917 L59.9,9.308 L62.227,9.308 L62.227,11.011 C61.668,11.427 60.888,11.7 60.03,11.7 C58.171,11.7 56.936,10.322 56.936,8.45 L56.936,8.424 C56.936,6.682 58.21,5.213 59.887,5.213 C61.044,5.213 61.733,5.59 62.435,6.188 L63.449,4.979 C62.513,4.186 61.538,3.744 59.952,3.744 C57.209,3.744 55.259,5.902 55.259,8.45 L55.259,8.476 C55.259,11.128 57.131,13.156 59.978,13.156 Z M67.474,13 L74.286,13 L74.286,11.57 L69.073,11.57 L69.073,9.126 L73.636,9.126 L73.636,7.696 L69.073,7.696 L69.073,5.33 L74.221,5.33 L74.221,3.9 L67.474,3.9 L67.474,13 Z M77.804,13 L79.403,13 L79.403,9.828 L81.405,9.828 L83.641,13 L85.526,13 L83.069,9.555 C84.343,9.191 85.24,8.294 85.24,6.799 L85.24,6.773 C85.24,5.98 84.967,5.304 84.486,4.81 C83.901,4.238 83.004,3.9 81.86,3.9 L77.804,3.9 L77.804,13 Z M79.403,8.411 L79.403,5.356 L81.73,5.356 C82.913,5.356 83.615,5.889 83.615,6.864 L83.615,6.89 C83.615,7.813 82.887,8.411 81.743,8.411 L79.403,8.411 Z" id="DILLINGER-2"></path>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</a>
+</h1>
+<div class="ad-container">
+</div>
+<nav class="nav nav-right">
+<ul class="menu menu-utilities">
+<li class="menu-item menu-item--export-as has-dropdown" dropdown="">
+<a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">Preview as <span class="caret"></span></a>
+<ul class="dropdown dropdown-menu ng-scope" role="menu" ng-controller="DocumentsExport as export" di-target="preview">
+<li>
+<a ng-click="export.asHTML()" class="export-html">HTML</a>
+</li>
+<li>
+<a ng-click="export.asStyledHTML()" class="export-styled_html">Styled HTML</a>
+</li>
+<li>
+<a ng-click="export.asMarkdown()" class="export-md">Markdown</a>
+</li>
+<li>
+<a ng-click="export.asPDF()" class="export-pdf">PDF</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--export-as has-dropdown" dropdown="">
+<a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">Export as <span class="caret"></span></a>
+<ul class="dropdown dropdown-menu ng-scope" role="menu" ng-controller="DocumentsExport as export" di-target="_top">
+<li>
+<a ng-click="export.asHTML()" class="export-html">HTML</a>
+</li>
+<li>
+<a ng-click="export.asStyledHTML()" class="export-styled_html">Styled HTML</a>
+</li>
+<li>
+<a ng-click="export.asMarkdown()" class="export-md">Markdown</a>
+</li>
+<li>
+<a ng-click="export.asPDF()" class="export-pdf">PDF</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--save-to has-dropdown" dropdown="">
+<a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">Save to <span class="caret"></span></a>
+<ul class="dropdown dropdown-menu" role="menu">
+<li ng-controller="Dropbox as dropbox" class="ng-scope">
+<a href="https://dillinger.io/redirect/dropbox" class="import-dropbox unlinked">
+<span>Dropbox</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+
+<li ng-controller="Github as github" class="ng-scope">
+<a class="import-github unlinked" ng-click="github.chooseScope()">
+<span>Github</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Medium as medium" class="ng-scope">
+<a href="https://dillinger.io/redirect/medium" class="import-medium unlinked">
+<span>Medium</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Googledrive as googledrive" class="ng-scope">
+<a href="https://dillinger.io/redirect/googledrive" class="import-google-drive unlinked">
+<span>Google Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Onedrive as onedrive" class="ng-scope">
+<a href="https://dillinger.io/redirect/onedrive" class="import-one-drive unlinked">
+<span>One Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--import-from has-dropdown" dropdown="">
+<a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">Import from <span class="caret"></span></a>
+<ul class="dropdown dropdown-menu" role="menu">
+<li ng-controller="Dropbox as dropbox" class="ng-scope">
+<a href="https://dillinger.io/redirect/dropbox" class="import-dropbox unlinked">
+<span>Dropbox</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Bitbucket as bitbucket" class="ng-scope">
+<a class="import-bitbucket unlinked" href="https://dillinger.io/redirect/bitbucket">
+<span>Bitbucket</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Github as github" class="ng-scope">
+<a class="import-github unlinked" ng-click="github.chooseScope()">
+<span>Github</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Googledrive as googledrive" class="ng-scope">
+<a href="https://dillinger.io/redirect/googledrive" class="import-google-drive unlinked">
+<span>Google Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="Onedrive as onedrive" class="ng-scope">
+<a href="https://dillinger.io/redirect/onedrive" class="import-one-drive unlinked">
+<span>One Drive</span>
+<span class="icon icon-link"><svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g sketch:type="MSArtboardGroup" transform="translate(-238.000000, -212.000000)" fill="#FFFFFF">
+<g sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g transform="translate(0.000000, 75.000000)" sketch:type="MSShapeGroup">
+<g transform="translate(32.000000, 72.000000)">
+<g transform="translate(206.000000, 0.000000)">
+<path d="M15.0962672,6.56194892 L10.8290766,10.8291395 C9.6502947,12.0079214 7.74066798,12.0079214 6.56188605,10.8291395 L5.13948919,9.40674263 L6.56188605,7.98434578 L7.98428291,9.40674263 C8.37721022,9.79869548 9.01472692,9.79966994 9.40667976,9.40674263 L13.6738703,5.13955206 C14.0658232,4.7471277 14.0658232,4.10910806 13.6738703,3.71665226 L12.2514735,2.2942554 C11.8595206,1.90230255 11.2210295,1.90230255 10.8290766,2.2942554 L9.30549312,3.8178389 C8.59919843,3.40231041 7.79665226,3.22401572 7.00196464,3.27754813 L9.40667976,0.871858546 C10.5854617,-0.306420432 12.4960629,-0.306420432 13.6738703,0.871858546 L15.0962672,2.2942554 C16.2750491,3.47256582 16.2750491,5.38366994 15.0962672,6.56194892 L15.0962672,6.56194892 Z M6.66209823,12.1513242 L5.13948919,13.6739332 C4.74656189,14.0668605 4.10904519,14.0658861 3.71709234,13.6739332 L2.29469548,12.2515363 C1.90176817,11.8595835 1.90176817,11.2220668 2.29469548,10.8291395 L6.56188605,6.56194892 C6.9538389,6.16999607 7.59233006,6.16999607 7.98428291,6.56194892 L9.40667976,7.98434578 L10.8290766,6.56194892 L9.40667976,5.13955206 C8.22789784,3.96127308 6.31827112,3.96127308 5.13948919,5.13955206 L0.872298625,9.40674263 C-0.306483301,10.5855246 -0.306483301,12.4961257 0.872298625,13.6739332 L2.29469548,15.0963301 C3.47250295,16.275112 5.38310413,16.275112 6.56188605,15.0963301 L8.96660118,12.6916149 C8.17191356,12.7446444 7.37131631,12.5658782 6.66209823,12.1513242 L6.66209823,12.1513242 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</span>
+</a>
+</li>
+<li ng-controller="ImportFile as importFile" class="ng-scope">
+<a class="linked" ng-click="choose()">
+<span>Markdown File</span>
+</a>
+</li>
+
+<li ng-controller="ImportFile as importFile" class="ng-scope">
+<a class="linked" ng-click="choose(&#39;html&#39;)">
+<span>HTML File</span>
+</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-icon menu-item--preview">
+<a class="menu-link menu-link-preview" preview-toggle="">
+<i class="icon icon-preview"><svg viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g id="Mobile---Home" sketch:type="MSArtboardGroup" transform="translate(-234.000000, -85.000000)" fill="#D3DBEB">
+<g id="Navigation" sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g id="Menu-Item:-Preview" transform="translate(218.000000, 0.000000)" sketch:type="MSShapeGroup">
+<g id="Icon:-Preview" transform="translate(17.000000, 20.000000)">
+<path d="M8.90526316,0.0311320755 C3.00069474,0.0311320755 -0.0947368421,4.79641509 -0.0947368421,5.55188679 C-0.0947368421,6.30756604 3.00069474,11.0726415 8.90526316,11.0726415 C14.8094526,11.0726415 17.9052632,6.30756604 17.9052632,5.55188679 C17.9052632,4.79641509 14.8094526,0.0311320755 8.90526316,0.0311320755 L8.90526316,0.0311320755 Z M8.90526316,9.79871698 C6.69618947,9.79871698 4.90509474,7.89737736 4.90509474,5.55188679 C4.90509474,3.20639623 6.69618947,1.3050566 8.90526316,1.3050566 C11.1143368,1.3050566 12.9052421,3.20639623 12.9052421,5.55188679 C12.9052421,7.89737736 11.1143368,9.79871698 8.90526316,9.79871698 L8.90526316,9.79871698 Z M10.9051579,5.55188679 C10.9051579,6.7245283 10.0095158,7.67550943 8.90526316,7.67550943 C7.80063158,7.67550943 6.90536842,6.7245283 6.90536842,5.55188679 C6.90536842,4.37924528 7.80063158,3.4284717 8.90526316,3.4284717 C9.50210526,3.4284717 8.53901053,5.11126415 8.90526316,5.55188679 C9.21656842,5.92609434 10.9051579,5.01330189 10.9051579,5.55188679 L10.9051579,5.55188679 Z" id="Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</i>
+<span class="sr-only">Preview</span>
+</a>
+</li>
+<li class="menu-item menu-item-icon menu-item--settings">
+<a class="menu-link menu-link-settings" settings-toggle="">
+<i class="icon icon-settings"><svg viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g id="Mobile---Home" sketch:type="MSArtboardGroup" transform="translate(-286.000000, -81.000000)" fill="#D3DBEB">
+<g id="Navigation" sketch:type="MSLayerGroup" transform="translate(0.000000, 65.000000)">
+<g id="Menu-Item:-Settings" transform="translate(269.000000, 0.000000)" sketch:type="MSShapeGroup">
+<g id="Icon:-Settings" transform="translate(17.000000, 16.000000)">
+<path d="M17.341654,7.68935491 L15.5585491,7.39189286 C15.4289531,6.86205804 15.2399933,6.35558705 14.9938996,5.88320759 L16.1353929,4.46787723 C16.3781719,4.16876786 16.3671429,3.73839509 16.1111853,3.44971205 L15.4020134,2.65156473 C15.1449509,2.36318304 14.7186763,2.30219196 14.3934911,2.507625 L12.8685937,3.46620536 C12.1978929,2.99760268 11.4381562,2.65156473 10.6185937,2.45077232 L10.3202679,0.658104911 C10.2576696,0.278517857 9.92918973,0 9.54359598,0 L8.47488616,0 C8.09007589,0 7.76049107,0.278517857 7.69925893,0.658104911 L7.39932589,2.45133482 C6.72173437,2.61723214 6.0864308,2.88502232 5.50665402,3.23770982 L4.05644866,2.20275 C3.74389955,1.97945759 3.31461161,2.01437277 3.04185937,2.28654241 L2.28684375,3.04210045 C2.01467411,3.31485268 1.97975893,3.74414062 2.20363393,4.05668973 L3.24100446,5.50966741 C2.8916317,6.08506473 2.62659375,6.71675223 2.46071652,7.38829687 L0.65784375,7.68935491 C0.278839286,7.75195312 -0.000220982143,8.08047321 -0.000220982143,8.46606696 L-0.000220982143,9.53393304 C-0.000220982143,9.91952679 0.278839286,10.2480469 0.65784375,10.3106451 L2.46071652,10.6117031 C2.59694196,11.1642991 2.79470089,11.6921853 3.05754911,12.1816205 L1.92125893,13.5889554 C1.67930357,13.8877835 1.68946875,14.3184375 1.94542634,14.6068594 L2.6540558,15.4050067 C2.91113839,15.6939308 3.33765402,15.753817 3.66285937,15.5489063 L5.20973437,14.5771875 C5.86426339,15.0248772 6.60473437,15.3539196 7.39932589,15.5489063 L7.69925893,17.341875 C7.76049107,17.7215022 8.09007589,18 8.47488616,18 L9.54359598,18 C9.92918973,18 10.2576696,17.7215022 10.3202679,17.3418951 L10.619096,15.5489263 C11.2882299,15.3852589 11.9154777,15.1221295 12.4900915,14.7754888 L14.0007254,15.8543839 C14.3127321,16.0785 14.7423214,16.0433437 15.0147924,15.7703103 L15.7700893,15.0150134 C16.0419576,14.7430848 16.0787812,14.3140379 15.8529978,14.0009464 L14.7774978,12.4930647 C15.1278951,11.9157388 15.3943192,11.2829263 15.5591518,10.6083683 L17.3422366,10.310625 C17.722346,10.2480268 18.0002812,9.9195067 18.0002812,9.53391295 L18.0002812,8.46604688 C17.9997388,8.08047321 17.7218036,7.75195312 17.341654,7.68935491 L17.341654,7.68935491 Z M9.0283058,12.375 C7.1647433,12.375 5.6533058,10.8632812 5.6533058,9 C5.6533058,7.1364375 7.1647433,5.625 9.0283058,5.625 C10.8915469,5.625 12.4032656,7.1364375 12.4032656,9 C12.4032656,10.8632812 10.8915469,12.375 9.0283058,12.375 L9.0283058,12.375 Z" id="settings_1_"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</i>
+<span class="sr-only">Settings</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="overlay"></div>
+<div class="header">
+<h2 class="title">Document Name</h2>
+<document-title><input class="title-document ng-pristine ng-untouched ng-valid ng-not-empty" type="text" name="documentTitle" ng-change="updateDocument()" ng-model-options="{ debounce: 500 }" ng-model="currentDocument.title">
+</document-title>
+<!-- ngIf: profile.enableWordsCount && !viewSrcMode --><p ng-if="profile.enableWordsCount &amp;&amp; !viewSrcMode" class="words ng-scope">
+<span class="mr10">Reading Time: <span class="counter ng-binding" ng-bind="readingTime">1 min read</span></span>
+<span>Words: <span class="counter ng-binding" ng-bind="words">30</span></span>
+</p><!-- end ngIf: profile.enableWordsCount && !viewSrcMode -->
+<!-- ngIf: profile.enableCharactersCount && !viewSrcMode --><p ng-if="profile.enableCharactersCount &amp;&amp; !viewSrcMode" class="characters ng-scope">Characters: <span class="counter ng-binding" ng-bind="characters">204</span></p><!-- end ngIf: profile.enableCharactersCount && !viewSrcMode -->
+</div>
+<div class="g mnone">
+<div class="editor-header editor-header--first">
+<h3 class="title">Markdown</h3>
+<!-- ngIf: !$root.viewSrcMode --><a class="enter-zen-mode ng-scope" ng-click="zenmode.toggle()" ng-if="!$root.viewSrcMode">Toggle Zen Mode</a><!-- end ngIf: !$root.viewSrcMode -->
+</div>
+<div class="editor-header">
+<h3 class="title">Preview</h3>
+<a ng-class="{&#39;preview-mode-toggle-html&#39; : $root.viewSrcMode, &#39;preview-mode-toggle-src&#39; : !$root.viewSrcMode}" ng-click="toggleView()" class="preview-mode-toggle-src">Toggle Mode</a>
+</div>
+<div id="editor1" class="g-b g-b--t1of2 split split-editor" style="height: 1001px;">
+<div id="editor" class="ui-resizable-e ace_editor ace-tm" style="height: 3136px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; left: 51px; top: 0px; height: 28px; width: 7px;"></textarea><div class="ace_gutter" aria-hidden="true"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="margin-top: 0px; height: 3192px; width: 47px;"><div class="ace_gutter-cell " style="height: 28px;">1<span class="ace_fold-widget ace_start ace_open" style="height: 28px;"></span></div><div class="ace_gutter-cell " style="height: 28px;">2<span class="ace_fold-widget ace_start ace_open" style="height: 28px;"></span></div><div class="ace_gutter-cell " style="height: 28px;">3<span class="ace_fold-widget ace_start ace_open" style="height: 28px;"></span></div><div class="ace_gutter-cell " style="height: 28px;">4<span class="ace_fold-widget ace_start ace_open" style="height: 28px;"></span></div><div class="ace_gutter-cell " style="height: 840px;">5</div><div class="ace_gutter-cell " style="height: 896px;">6</div><div class="ace_gutter-cell " style="height: 756px;">7</div><div class="ace_gutter-cell " style="height: 392px;">8</div><div class="ace_gutter-cell " style="height: 28px;">9<span class="ace_fold-widget ace_start ace_open" style="height: 28px;"></span></div><div class="ace_gutter-cell " style="height: 28px;">10</div><div class="ace_gutter-cell " style="height: 28px;">11</div><div class="ace_gutter-cell " style="height: 28px;">12</div><div class="ace_gutter-cell " style="height: 28px;">13</div></div><div class="ace_gutter-active-line" style="top: 0px; height: 28px;"></div></div><div class="ace_scroller" style="left: 47px; right: 0px; bottom: 0px;"><div class="ace_content" style="margin-top: 0px; width: 1200px; height: 3192px; margin-left: 0px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 564px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height:28px;top:0px;left:0;right:0;"></div></div><div class="ace_layer ace_text-layer" style="padding: 0px 4px;"><div class="ace_line_group" style="height:28px"><div class="ace_line" style="height:28px"><span class="ace_markup ace_heading ace_1">#</span><span class="ace_heading"> ВЕЛИКИЕ СТРАНЫ СКАНДИНАВИИ</span></div></div><div class="ace_line_group" style="height:28px"><div class="ace_line" style="height:28px"><span class="ace_markup ace_heading ace_2">##</span><span class="ace_heading"> ВСЕМ СОВЕТУЮ УЕЗЖАЙТЕ В НОРВЕГИЮ ИЛИ ФИНЛЯНДИЮ </span></div></div><div class="ace_line_group" style="height:28px"><div class="ace_line" style="height:28px"><span class="ace_markup ace_heading ace_2">##</span><span class="ace_heading"> РАБОТАЙТЕ БРАТЬЯ И БУДЕТЕ БОГАТЫ </span></div></div><div class="ace_line_group" style="height:28px"><div class="ace_line" style="height:28px"><span class="ace_markup ace_heading ace_2">##</span><span class="ace_heading"> ВКЛЮЧАЙТЕ ДАНЗА КУДУРО И КАЙФУЙТЕ </span></div></div><div class="ace_line_group" style="height:840px"><div class="ace_line" style="height:28px">[<span class="ace_string">![NSolid</span>](<span class="ace_markup ace_underline">data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURFRMYHSgsGBolGxUVLTEhJTUwLjAuFx8zOTMtNygtLisBCgoKDQ0OGA8NFTUd</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">Hh03MjItMis1Ny0rLTA1My0tKy0tKy00Ny0tLS0rLS0rKystNystLSsrLS0tLS0tKzcrLf/AABEIALcBEwMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAQcCBAYIBQP/xABCEAABAQUDCAgCBgsBAQAAAAAAAwECBA</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">VUFpPSFTE1cZSjs9EGBxE0c3SDshMyEiEiM0FSFCRCQ1FhcoKSorFiI//EABoBAQADAQEBAAAAAAAAAAAAAAABBAYFAgP/xAAmEQEAAQMDAwUBAQEAAAAAAAAAAQMUUgIxkQQTMwURMlGxEkEi/9oADAMBAAIRAxEAPwC25RLI</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">VsLDNbDQ7WtQR7WtRT+v7DP5AbWS4Wmh7lPkAyXC00Pcp8gGS4Wmh7lPkAyXC00Pcp8gGS4Wmh7lPkAyXC00Pcp8gGS4Wmh7lPkAyXC00Pcp8gKW6zIVJybLuupJuusTQ+p1x1jPu2fwYdvodOmaMe8OD1+rVFaYiXK/Bc/I5/</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">iwt/xp+lLua/s+C5+Rz/Fg/jT9Hc1/afgufkd/xYP40/R3Nf2lxFztZ9hzOz9lhE6NPtsmKmv33ej05XC9jP1aHzM/cp8jNNTGzLJcLTQ9ynyCTJcLTQ9ynyAZLhaaHuU+QDJcLTQ9ynyAZLhaaHuU+QDJcLTQ9ynyAZLhaaHu</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">U+QDJcLTQ9ynyAZLhaaHuU+QDJcLTQ9ynyAZLhaaHuU+QDJcLTQ9ynyAZLhaaHuU+QDJcLTQ9ynyAZLhaaHuU+QDJcLTQ9ynyAZLhaaHuU+QDJcLTQ9ynyAZLhaaHuU+QFadMYJB2YRDHUUmMZ8LsYxNxjPunP5AWXJ+6w3l0f</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">YwDcAAAAAAAAAUh1o6XX8NDhsO50Phhn/UPPLky4ogACXM7NbBOyY3el0/lZqYZf8A1rI2ZhIAAAAAAAAAAAAAAAAAAAACr+mekYj0eE4BYkn7rDeXR9jANwAAAAAAAABSHWjpdfw0OGw7nQ+GGf8AUPPLky4ogACXM7NbBOyY</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">3el0vlZqYZdrI2ZhIBAEgQBIAABAEgAIAkAAAAAAACr+mekYj0eE4BYkn7rDeXR9jANwAAAAAAAABSHWjpdfw0OGw7nQ+GGf9Q80uTLiiAAJczs1sE7Jjd6XS+Vmphl2sjZmEgAAAAAAAAAAAAAAAAAAAAKv6Z6RiPR4TgFiSf</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">usN5dH2MA3AAAAAAAAAFIdaOl1/DQ4bDudD4YZ/wBQ88uTLikBAEpczs1sE7EbvS6fys1MMu1kbMwlAEgAAACAAEgAAAAAAgCQAAABV/TPSMR6PCcAsST91hvLo+xgG4AAAAAAAAApDrR0uv4aHDYdzofDDP8AqHnlyZcUQABL</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">mdmtgnZMbvS6WZmphl2sjZmEgAAAAAQAAkAAAgCQAACAJAAAKv6Z6RiPR4TgFiSfusN5dH2MA3AAAAAAAAAFIdaOl1/DQ4bDudD4YZ/1Dzy5MuKIAAlzOzWwTsmN3pdL5WamGXayNmYSAAAAAAAAAAAAAAAAAAAAAq/pnpGI9H</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">hOAWJJ+6w3l0fYwDbAkAAAAAAACkOtHS6/hocNh3Oh8MM/6h5pckXVIAAZOZ2a2ETsmN3pdP5WamGXauNmYSAAAAAAAAAAAABAEgAAAAAAq/pnpGI9HhOAWJJ+6w3l0fYwDbAAAAAAAAAUj1o6XX8NDhsO50Phhn/UPNLki6pA</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">ADJzOzWwidiN3pdPMzUwy/8ArWRsyCQCQIAASBAAABIEASBAEgQAAAAAFYdM9IxHo8JwDgoafzBiabGR8axjHHWMYyKWYxjOxn1fMaLRQpfzH/EcMzrr1f6n/ueX6WhmNfG7WtiPXYpYRw83FXOeS0Mxr43a1sQ7FLCOC4q5zy</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">WhmNfG7WtiHYpYRwXFXOeS0Mxr43a1sQ7FLCOC4q5zyWhmNfG7WtiHYpYRwXFXOeS0Mxr43a1sQ7FLCOC4q5zyWhmNfG7WtiHYpYRwXFXOeS0Mxr43a1sQ7FLCOC4q5zy0omJVWfaosooqo1jGNfVfeUfaxmbteae9OmNMe2mP</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">Z89WrVqn31T7vxPSAABIH0bQTGvjdrWxHy7FLCOH179XOeU2hmNfG7WtiHYpYRwXFXOeS0Mxr43a1sQ7FLCOC4q5zyWhmNfG7WtiHYpYRwXFXOeS0Mxr43a1sQ7FLCOC4q5zyWhmNfG7WtiHYpYRwXFXOeS0Mxr43a18Q7FLCO</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">C4q5zyWhmNfG7WtiHYpYRwXFXOeS0Mxr43a1sQ7FLCOC4q5zyWhmNfG7WtiHYpYRwXFXOeS0Mxr43a18Q7FLCOC4q5zyWhmNfG7WtiHYpYRwXFXOeUWhmNfG7WtiHYpYRwXFXOeU2hmNfG7WtiHYpYRwXFXOeS0Mxr43a1sQ7F</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">LCOC4q5zyWhmNfG7WtiHYpYRwXFXOeS0Mxr43a1sQ7FLCOC4q5zyWhmNfG7WtiHYpYRwXFXOeS0Mxr43a1sQ7FLCOC4q5zyWhmNfG7WtiI7FLCODv1c55fBmk1i3133n4qJeeb9HteeXUea37LPxa0pVqeiNc+2mF+jU1zoiZ1</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">S2Efkc/od/4dDR8Yc3X8pZnt5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHyJh969/b7WHPrfOXRoeOH1EPkc/od/4XdHxhQqfKWZ7eAJAAAAAAAAAEhCAkAAAAAAEASAAAAAAAAAAAAAAACB8iYfevf2+1hQrfOXRoeOH</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">1EPkc/od/wCF3R8YUNfylme3kAASBAACQAEAAAEgQBIEASAAgAAAkCAJAgAAAAAAEgQBIEED5Ew+9e/t9rChW+cuhQ8cO1hehE2eSTedgn2uvJuPMb8VH62NdY1jfmPpp6ujERH9Pnr6KvOqZjS/Wws4on71DEeryhk82PUYlh</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">ZxRP3qGIXlDIseoxLCziifvUMQvKGX6WNfEsLOKJ+9QxC8oZFj1GJYWcUT96hiF5QyLHqMSws4on71DELyhl+ljXxLCzihfvUMQvKGRY9RiWFnFE/eoYheUMv0seoxfGmUuXhFXkIhNqSrrHWtca115rGNZ2s+tjW/gffRU064</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">/rTPvD4VKeqnP8649pap7eAABLGEDoWdBpvRP3qGIrXlDJasq+KbCziifvUMQvKGX6WPUYlhZxRP3qGIXlDIseoxLCziifvUMQvKGRY18Sws4on71DELyhkWPUYlhZxRP3qGIXlDL9LHqMSws4on71DELyhkWNfEsLOKJ+9QxC</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">8oZfpY9RiWFnFE/eoYheUMixr4lhZxRP3qGIXlDL9LHqMSws4on71DELyhkWNfEsLOKJ+9QxC8oZfpY9RiWFnFE/eoYheUMix6jEsLOKJ+9QxC8oZFj1GJYWcUL96hiF5QyLHqMSws4on71DELyhl+lj1GJYWcUT96hiF5QyLG</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">viWFnFE/eoYheUMix6jEsLOKJ+9QxC8oZfpY9RiWFnFE/eoYheUMix6jFzc46NR6UQo4/DPOvu/Q7WfTTb2drjG/g9/Mp1a9PVqmYleo9NU06IiYekZP3WG8uj7GHMdVuAAAAAAAAAKP60dLr+Ghw2Hc6Hwwz/qHmlyZdUgABL</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">mdmthE7EbvTCWZmphl2sjZmEgAAAAAAAAAAAAAAAAAAAAKv6Z6RiPR4TgFiSfusN5dH2MA3AAAAAAAAAFH9aOl1/DQ4bDudD4YZ/1DzS5MuqQAAlzOzWwidkxu9MJZmamGX/1q42ZhIAAAAAAAAAAAAAAAAAAAACr+mekYj0eE</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">4BYkn7rDeXR9jANwAAAAAAAABR/Wjpdfw0OGw7nQ+GGf9Q80uTLqkAAJczs1sInZMbvTCWZmphl2rjZmEgAAAAAAAAAAAAAAAAAAAAKv6Z6RiPR4TgFiSfusN5dH2MA3AAAAAAAAAFH9aOl1/DQ4bDudD4YZ/wBQ80uTLqkAAJ</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">czs1sInZMbvTCWZmphl2rjZmEgAAAAAAAAAAAAAAAAAAAAKv6Z6RiPR4TgFiSfusN5dH2MA3AAAAAAAAAFH9aOl1/DQ4bDudD4YZ/1DzS5MuqQACEuZ2a2ETsmN3phLMzUwy7WRszCQAAAAAAAAAAAAAAAAAAAAFX9M9IxHo8J</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">wCxJP3WG8uj7GAbgAAAAAAAACj+tHS6/hocNh3Oh8MM/6h5pcmXVICAJS5nZrYROxG70wlmZqYZdrI2ZhIAAAAAAAAAAAAAAAAAAAACr+mekYj0eE4BYkn7rDeXR9jANwAAAAAAAABR/Wjpdfw0OGw7nQ+GGf9Q80uTLqiBIEJ</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">czs1sInZMbvTCWZmphl2sjZmEgAAAAAAAAAAAAAAAAAAAAKv6Z6RiPR4TgFiSfusN5dH2MA3AAAAAAAAAFH9aOl1/DQ4bDudB4YZ/1DzS5MuqQAAlzOzWwidiN3phLMzUwy7WRszCQAAAAAAAAAAAAAAAAAAAAFX9M9IxHo8Jw</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">Dq5V0pl7sNDutiPrYgixv/yWz/QZ/wCQNq1kuqN0thAWsl1RulsIC1kuqN0thAWsl1RulsIC1kuqN0thAWsl1RulsIC1kuqN0thAWsl1RulsIFO9Y81h1posomp9JxqaLGN+g+zM4z8GsOz0VTTppREy4fXUteqtMxDmf01L8/</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">8Aq9yLfe0fan2Kn0fpiX5/9XuQ72j7OxU+j9NS/P8A6vch3tH2dip9JdjUu1n2/wAWfsvciJraPbdMUKnvs9CudK5cxjP1j8GfulsJnGmjZlayXVG6WwhJayXVG6WwgLWS6o3S2EBayXVG6WwgLWS6o3S2EBayXVG6WwgLWS6o</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">3S2EBayXVG6WwgLWS6o3S2EBayXVG6WwgLWS6o3S2EBayXVG6WwgLWS6o3S2EBayXVG6WwgLWS6o3S2EBayXVG6WwgLWS6o3S2EBayXVG6WwgLWS6o3S2ECuels7hFI9d91btdb8Lsb8NRn7p1n8AP/Z</span>)</div></div><div class="ace_line_group" style="height:896px"><div class="ace_line" style="height:28px">[<span class="ace_string">![NSolid</span>](<span class="ace_markup ace_underline">data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw4HDQgHBw0NBwcHDQ0HBwcHDQ8IDQcNFREWFhURFRUYKDQgGBoxGxUVIT0hKCk1OjouIyszRDMxNzE8LisBCgoKDQ0OFg0NFTcZ</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">FRkrKy0tLSstLystLS0tNzcvKy0tLSs3Ny0tLSsrLSstLS0tLSstLS0rLS0tKystKys3Lf/AABEIAL8BCAMBEQACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAABwgBBgQFA//EADoQAAEBAwYLCAEDBQAAAAAAAAABAgMEFz</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">FUcZPRBggSFBVRU1WRkpQRE0FGhMPE0jIhI0MFBzNiY//EABoBAQEBAQEBAQAAAAAAAAAAAAAEBQEHAwL/xAAmEQEAAQIDCQEBAQAAAAAAAAAAAQIUAwRSERITMUFCUYGRYTIi/9oADAMBAAIRAxEAPwD8gxnpwAAAAAAAATwr</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">QOTyloZiZmpDYh5kjuML+WDdUf8AHNHI93pNmeiPl6QAsOL35g9H7pn57tVZfqsLczVSkCqGeV8a1Md6bHKA46AAAAAAAAAAAAAAAAAADgAAAAAAAADqeFaByeUtDMTM1IbEPMkdxhZ8G6o/45o5Hu9Jsz0R8vSAFhxe/MHo/d</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">M/PdqrL9VhbmaqUgVQzys61qYz06OUOAAAAAAAAAAAAAAAAAAAB0AAAAAAAAATwrQOTyloZiZmpDYh5kjuML+WDdUf8c0cj3ek2Z6I+XpACw4vnmD0fumfnu32qy/VYW5mqlIFUM8rOtamM9OjlAAAAAAAAAAAAAAAAAAAAAAA</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">AAAAAAATwrQOTyloZiZmpDYjk8yR3GFnwbqj/jmjke70mzHRHy9IAWHF78wej90z892+1WX6rC3M1UpAqhnlZ1rUxnpscoA6AAAAAAAAAAAAAAAAAAAAAAAAAAAAJ4VoHJ5S0MxMzUhsRyeZI7jC/lg3VH/HNHI93pNmeiPl6Q</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">AsOL55g9H7pn57t9qsv1WFuZqpSBVDPKzrWpjPTY5QB0AAAAAAAAAAAAAAAAAAAAAAAAAAAATwrQOTyloZiZmpDYh5kjuMLPg3VH/HNHI93pNmeiPl6QAsOL55g9H7pn57t9qsv1WFuZqpSBVDPKzrWpjPTY5QB0AAAAAAAAAA</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">AAAAAAAAAAAAAAAAAATwrQOTyloZiZmpDYh5kjuMLPg3VH/HNHI93pNmeiPl6QAsOL55g9H7pn57t9qsv1WFuZqpSBVDPKzrWpjvTY5QHHQAAAAAAAAAAAAAAAAAAAAAAAAAAABPCtA5PJoZiZmpDYh5kjuMLPg3VH/HNHI93p</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">NmeiPl6QAsOL35g9H7pn57t9qsv1WFuZqpSBVDPKzrWpjvTY5QHHQAAAAAAAAAAAAAAAAAAf1zV7sntm3cd3avD58bC1x9gzV7sntm3cN2rwcbC1x9gzV7sntm3cN2rwcbC1x9gzV7sntm3cd3avBxsLXH2DNXuye2bdxzdq8H</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">GwtcfYM1e7J7Zt3Ddq8HGwtcfYM1e7J7Zt3Ddq8HGwtcfYM1e7J7Zt3Ddq8HGwtcfYdzV7+n7T2dP427ju7V4cnGwtk/7j7DQDEzNSGtDzZHcYWfBuqP+OaOR7vSbM9EfL0gBYcXzzB6P3TPz3b7VZbqsLUzVSkCqGf1hXvav7</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">T2df427jI3avD0mMbC2f3H2HM1e7J7Zt3HN2rw7xsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bY3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxsLXH2DNXuye2bdw3avBxs</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">LXH2DNXuye2bdw3avBxsLXH2GgjYeagAAAAAAAAABHMYWfBuqP+OaGR7vSbM9EfL0gBYcXzzB6P3TPz3b7VZfqsRAqAAAAAAAAAAAAAAAAAAAAAROW+J3dD9Q8+po2Maktx+Et8Tu6H6h59RYxqLj8Jb4nd0P1Dy4WMai4/CW+</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">J3dD9Q8+osY1Fx+Et8Tu6H6h5cLGNRcfhLfE7uh+oeXCxjUXH4S3xO7ofqHlwsY1Fx+Et8Tu6H6h5cLGNRcfhLfE7uh+oefUWMai4/CW+J3dD9Q8+osY1Fx+PJ4d4bvcM1/p6xEM7gNG9+jHcPGn3e95kdvb2onZ/jTiffBwIw</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">tuydu18sTE33lD7vkAerwFw3e4G59m8M7jtId1l988ac91kZXZ2diL2/kfDHwIxdm2dmx9cPE3HrJb4nd0P1Dy4+FjGp9bj8Jb4nd0P1Dy4WMai4/CW+J3dD9Q8uFjGouPwlvid3Q/UPPqLGNRcfhLfE7uh+ob+osY1Fx+Et8T</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">u6H6h5cLGNRcfhLfE7uh+oefUWMai4/CW+J3bD9Q39RYxqLj8Jb4nd0P1Dz6ixjUXH4S3xO7ofqHn1FjGouPwlvid3Q/UPPqLGNRcfhLfE7uh+obuFjGouPwlvid3Q/UPPqLGNRcfhLfE7uh+oeXCxjUXH4S3xO7ofqG7hYxqL</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">j8Jb4nd0P1DdwsY1Fx+Et8Tu6H6h59RYxqLj8Jb4nd0P1Dy4WMai4/CW+J3dD9Q39RYxqLj8SguSgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAW+RKDp8ZyubjNvq9ML</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">bekkSg6fGcrm4X1emC3pJEoOnxnK5uF9Xpgt6SRGDp8ZyubhfV6YLekkRg6fGcrm4X1emC3pJEoOnxnK5uF9Xpgt6SRGDp8ZyubhfV6S3pJEYOnxnK5uF9Xpgt6SRKDp8ZyubhfV6YLekkSg6fGcrm4X1emC3peH/uZgS5wNX+</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">lpCP30ZpJIlXmdIwz3fd932dmSn/ReBTl8ecXbtjZsfHFw4o2bHiCl8AD2/wDbTAhzhjpLO376D0f3Pd5qjDXeZeX29uUn+pNmMecLZsjbtffCw4r27XuJEYOnxnK5uJr6vTD7W9JIlB0+M5XNwvq9MFvSSIwdPjOVzcL6vTBb</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">0kiMHT4zlc3C+r0lvSSIwdPjOVzcL6vTBb0kiUHT4zlc3C+r0wW9JIjB0+M5XNwvq9MFvSSIwdPjOVzcL6vTBb0kiMHT4zlc3C+r0wW9JIjB0+M5XNwvq9MFvSSIwdPjOVzcL6vTBb0kiMHT4zlc3C+r0wW9JIlB0+M5XNwvq9</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">MFvSSJQdPjOVzcL6vTBb0kiMHT4zlc3C+r0wW9JIjB0+M5XNwvq9MFvSSJQdPjOVzcL6vTBb0kiMHT4zlc3C+r0wW9JIjB0+M5XNwvq9MFvSpWkoakuLZi8g3qfKzg4uifkmkoakuLZi8b1Pk4OLon5JpKGpLi2YvG9T5ODi6J</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">+SaShqS4tmLxvU+Tg4uifkmkoakuLZi8b1Pk4OLon5JpOGpLi2YvG9T5ODi6J+SaShqS4tmLxvU+Tg4uifkmkoakuLZi8b1Pk4OLon5JpOGpLi2d3jep8nBxdE/JfUfp8kcxhfywbqj/AI5oZHu9Jsz0R8vSAFhxfPMHo/dM/P</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">dvtVl+qxECp8ukoakuLZi8/O9T5fXg4uifkmkoakuLZi8b1Pk4OLon5JpKGpLi2YvG9T5OBi6J+SaShqS4tmLxvU+Tg4uifkmkoakuLZi8b1Pk4OLon5JpKGpLi2YvG9T5ODi6J+SaShqS4tmLxvU+Tg4uifkmkoakuLZi8b1P</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">k4OLon5JpKGpLi2YvG9T5ODi6J+SaShqS4tmLxvU+Tg4uifkmkoakuLZi8b1Pk4OLon5JpKGpLi2YvG9T5ODi6J+SaThqS4tmLxvU+Tg4uifkmkoakuLZi8b1Pk4OLon5JpKGpLi2YvG9T5ODi6J+SaShqS4tmLxvU+Tg4uifk</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">mkoakuLZi8b1Pk4OLon5JpKGpLi2YvG9T5OBi6J+SgGSmpOBkPStsu5Kak4A2yZKak4A2y5kpqTgDbLuSmpOANsuZKak4A2y7kpqTgDbJkpqTgDbIjKfp+iTp4ByZnZLQ7EzNSGzDzGUdxhZ8G6o/45oZHu9Jsz0R8vSAFhxfP</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">MHo/dM/PdvtVl+qwtzNVKQKoZ4VlO1f0SdfAxnp0TOyDJTUnAO7ZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScAbZMlNScA</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">bZMlNScAbZdDgAAAAAAAATwrQOTyloZiZmpDYh5kjuMLPg3VH/ABzRyPd6TZnoj5ekALDi+eYPR+6Z+e7farL9VhbmaqUgVQzys61qYz06OUAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPCtA5PKWhmJmakNiOTzJHcYWfBuqP+Oa</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">OR7vSbM9EfL0gBYcXzzB6P3TPz3b7VZfqsLczVSkCqGeVnWtTGenRygAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJ4VoHJ5S0MxMzUhsRyeZI7jC/lg3VH/HNHI93pNmeiPl6QAsOL55g9H7pn57t9qsv1WFuZqpSBVDPKzrWpjPTY</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">5QB0AAAAAAAAAAAAAAAAAAAAAAAAAAAATwrQOTyloZiZmpDYjk8yR3GFnwbqj/AI5o5Hu9Jsz0R8vSAFhxe/MHo/dM/PdvtVl+qwtzNVKQKoZ5Wda1Md6bHKA46AAAAAAAAAAAAAAAAAAAAAAAAAAAAJ4VoHJ5S0MxMzUhsRye</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">ZI7jCz4N1R/xzRyPd6TZnoj5ekALDi+eYPR+6Z+e7farL9VhbmaqUgVQzys61qY702OUBx0AAAAAAAAAAAAAAAAAAAAAAAAAAAATwrQOTyloZiZmpDYjk8yR3GFnwbqj/jmjke70mzPRHy9IAWHF88wej90z892+1WW6rC3M1U</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">pAqhnlZ1rUx3pscoDjoAAAAAAAAAAAAAAAAAAAAAAAAAAAAnhWgcnlLQzEzNSGxDzJHcYX8sG6o/45o5Hu9Jsz0R8vSAFhxfPMHo/dM/PdvtVl+qwtzNVKQKoZ5Wda1MZ6dHKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnhWgcnl</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">LQzEzNSGxDzJHcYWfBuqP+OaOR7vSbM9EfL0gBYcXzzB6P3TPz3b7VZfqsLczVSkCqGeVnWtTGenRygAAAAAAAAAAAAAAAAAAAD/2Q==</span>)</div></div><div class="ace_line_group" style="height:756px"><div class="ace_line" style="height:28px">[<span class="ace_string">![NSolid</span>](<span class="ace_markup ace_underline">data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0HBwcHDQ8IDQcNFREiFhURExMYKCggGBoxGxMTIT0hJSkrLjI8FzJCODM4NygtLjcBCgoKDQ0NFQ0NDysZ</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">FRk3KystKy03NysrKzcvLywrNy0rKys3LSsrKy83KysrNysrKysrKzgtKzctNy0uKystLf/AABEIAL0BCwMBEQACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAQQHBgUDAv/EADgQAQABAQILBwEIAgMAAAAAAAADAQJhBR</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">ETFBZTVIGRkqEGMTI1crGzEgQVISNjk6LhQUMiNFH/xAAbAQEAAgMBAQAAAAAAAAAAAAAAAQIDBgcFBP/EADIRAQABAQMJCQEAAwADAAAAAAABAgMRMQQFEhMyU2GBsQYUFRY1UlRxkTQhQWIiIzP/2gAMAwEAAhEDEQA/AOSb</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">M1MAABAAJAAARVhKYxblZ7nALXbnm6JRswljWAAc/wBu/LZ/VD8tGzdkvVrP6q6S8zPH8lXLqyx15pYACAASCASAAAAAACAASCAWIvDTf7oZIwfBLGgAAAAAAEgIqwlMYtys91HALXbnm6JRswljWAAc/wBu/LZ/VD8tGzdkvV</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">rP6q6S8zPH8lXLqyt15pYCQQAAAAAACQQAAAAAACzF4ab/AHQyRgrJYwAAAAAAABFWEpjFudnuo4Ba7c83RKNmEqLCASOf7d+Wz+qH5aNl7JerWf1V0l5meP5KuXVlbrzSwAAAAAAAAAAAAAAAAFmLw03+6GSMFZLGAAAAAAAA</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">IqwlMYtzs91HALXbnm6JRswlRYABz/bvy2f1Q/LRsvZL1Wz+qukvMzx/JVy6srdeaWAAAAAAAAAAAAAAAAAsxeGm/wB0MkYKyWMAAAAAAAARVhKYxbnZ7nALXbnm6JThCVFgAHP9u/LZ/VD8tGy9kvVrP6q6S8zPH8lXLqyt15</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">pYAAAAAAAAAAAAAAAACzF4ab/dDJGCsljAAAAAAAAEVYSmMYbnZ7qOAWu3PN0SjCEqLAAOf7d+Wz+qH5aNl7JerWf1V0l5meP5KuXVlbrzSwAAAAAAAAAAAAAAAAFmHw03+6s4rxgrLKAAAAAAAACKsJTGMNzs91HALXbnm6JR</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">swlRYQCRz/bvy2f1Q/LRsvZL1az+qukvMzx/JVy6srdeaWAAAAAAAAAAAAAAAAAsReGm/wB0MkYK6WMAAAAAAAARVhKYxbnZ7nALXbnm6JRswlRYABz/AG78tn9UPy0bL2S9Ws/qrpLzM8fyVcurK3XmlgAAAAAAAAAAAAAAAA</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">LEXhpv90MkYK6WMAAASCAAASCtWEpjFudnucAtduebolOEJUWAAc/278tn9UPy2Wy9kvVbP6q6S8zPH8lXLqyt15pYkEAAAkEAAAkAEAkAEAAACzD4ab/dDJGDVtG8H7JDwq4t5hzp8upu/h2S7mDRvB+yQ8Ko8w50+XUeHZLu</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">YNG8H7JDwqnzDnT5dR4dku5g0bwfskPCp5hzp8uo8OyXcwaN4P2SHhU8w50+XUeHZLuYNG8H7JDwqeYc6fLqPDsl3MGjeD9kh5anmHOny6jw7JdzBo3g/ZIeFTzDnT5dR4dku5g0bwfskPCp5hzp8uo8OyXcwaNYP2SHhU8w50</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">+XUeH5LuYerR48zfN8vsiLhUAAfH7X9ljnsVjlsUkjtYq24pPxpaxVx060o+jJsqtsmtItbCvRrj/cKWllRaU6FdN8KGjeD9kh4Vel5hzp8up83h2S7mDRvB+yQ8KnmHOny6jw7JdzBo3g/ZIeFTzDnT5dR4dku5g0bwfskPCp</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">5hzp8uo8OyXcwaN4P2SHhU8w50+XUeHZLuYNG8H7JDwqeYc6fLqPDsl3MGjeD9kh4VR5hzp8uo8OyXcwaN4P2SHhVPmHOny6jw7JdzBo3g/ZIuFTzDnT5dR4dku5g0bwfskPCqPMOdPl1Hh2S7mDRvB+yQ8Kp8w50+XUeHZLuY</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">NGsH7JDwqeYc6fLqPDsl3MGjeD9kh4VR5hzp8uo8OyXcwaN4P2SHhU8w50+XUeHZLuYNG8H7JDwqnzDnT5dR4dku5g0bwfskPCqPMOdPl1Hh2S7mDRvB+yQ8Kp8w50+XUeHZLuYNG8H7JDwqeYc6fLqPDsl3MP1Z7OfYMX/Uh4</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">VZac/ZzmL+91Kzm7Jb//AIw9N4L7gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE0Z6NlWcUMCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACaM9GyrOKGBYAQACQQAAAACQQACQQAAACQQAAAAAACQQAAAAAJoz0YKzijFcw3LXmK4</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">uLzFcXIvMVS5N5uqXF4XIvMVxcm8xFxeYri5F5iLi8EgAAAGIuLzFcXF5iLi8xXVLi8xXVLi8xXFxebi4vNxcXmIuLzEXF5iuLi8xXFyLzFdUuLzFUuTebqlxeYri5F5iuLk3mIuRe/VKXM9GyicWHZ1LrZOe07v3ex3UfkOf6</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">6098mdS62TntHd7HdR+Qa6098mcy62TntHd7HdR+Qa6098mdS62TntHd7HdR+Qa6098mdS62TntHd7HdR+Qa6098mdS62TntHd7HdR+Qa6098mcy62TntHd7HdR+Qa6098mdS62T9y0d3sd1H5BrrT3yZ1LrZOe0d3sd1H5Brr</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">T3yZ1LrZOe0irJ7G6f/VH5BFtaX7ctus9zgtrtzzdBpwhKiQAHg9uLdbODp62a1pX6ocVqxWtmtPzaf5bH2UppqzrZxVF8XVdJebnaZjJapibsOrLs6l1sn7lp1vu9juo/IafrrT3yZ1LrZOe0d3sd1H5BrrT3yZ1LrZOe0d3s</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">d1H5BrrT3yZ1LrZP3LR3ex3UfkGutPfKc5l1snPaO72O6j8g11p75RnUutk57R3ex3UfkGutPfJnUutk57R3ex3UfkGutPfJnUutk57R3ex3UfkGutPfJnUutk57R3ex3UfkGutPfJnUusk57R3ex3UfkGutPfJnUutk57R3ex</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">3UfkGutPfJnUutk57R3ex3UfkGutPfKc5l1snPaO72O6j8hGutPfKM6l1snPaO72O6j8hOutPfJnUutk/ctHd7HdR+Qa6098mdS6yTntHd7HdR+Qa6098mdS62TntHd7HdR+Qa6098mdS62TntHd7HdR+Qa6098rEX2iX6afmS</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">f5/2Wv8A1WbCy3cfkLRa2nvn9UmdgAAAAAAAAEVYSmMYbnZ7qOAWu3PN0SjZhKiwADn+3fls/qh+WjZeyXq1n9VdJeZnj+Srl1ZW680sAAAAAAAAAAAAAAAABZi8NN/uhkjBWSxgAAAAAAACKsJTGMNzs91HALXbnm6JRswlRY</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">ABz/bvy2f1Q/LRsvZL1az+qukvMzx/JVy6srdeaWAAAAAAAAAAAAAAAAAsQ+Gm/wB0MkYK6WMAAAAAAAARVhKYxbnZ7qOAWu3PN0SnCEqLAAOf7d+Wz+qH5aNl7JerWf1V0l5meP5KuXVlbrzSwAAAAAAAAAAAAAAABIsQ+Gm/</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">3VZIwV0sYAAAAAAAAirCUxi3Oz3OAWu3PN0SnCEqLAAOf7d+Wz+qH5aNl7Jeq2f1V0l5meP5KuXVlbrzSwAAAAAAAAAAAAAAAAFiLw03+6GSMFdLGAAAAAAAAIqwlMYw3Oz3UcAtduebolGEJUWAAc/278tn9UPy0bL2S9Ws/q</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">rpLzM8fyVcurK3XmlgAAAAAAAAAAAAAAAALEPhpv8AdDJGCuljAAAAAAAAEVYSmMYbnZ7qOAWu3PN0SjZhKiwAgc/278tn9UPy0bN2S9Ws/qrpLzM8fyVcurK3XmlgAAAAAAAAAAAAAAAALMPhpv8AdWV4wVllAAAAAAAABFWE</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">pjFudnuo4Ba7c83RKNmEqLCABz/bvy2f1Q/LRs3ZL1az+qukvMzx/JVy6srdeaWAAAAAAAAAAAAAAAAAsReGm/3QyRgrpYwAAAAAAABFWEpjFudnuo4Ba7c83RKcISosAA5/t35bP6oflo2Xsl6tZ/VXSXmZ4/kq5dWVuvNLAA</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">AAAAAAAAAAAAAAAWYfDTf7oleMFHLXdVdPgtquJlrupp8DVcTLXdTT4Gq4mWu6mnwNVxMtd1NPgariZa7qafA1XEy13U0+BquJlrupp8DVcTLXdTT4Gq4mXu6oqr/xP+ExZ/5xbRTCf4U/L/n/AE4dXkt9U/8Al/uW+01f4hP3</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">n+n/AD/pTun/AGnT4H3n+n/P+jun/Zp8D7z/AE/5/wBHdP8As0+Dw+232/6sHTU+jFjtQ/j9WP8A20ubD2XsNXnSzq0r/wDFXSXnZ2nSyWqPrqzLLXdXVNPg1HVcTLXdTT4Gq4mWu6mnwNVxMtd1NPgariZe7qafA1XEy13U0+</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">BquJlrupp8DVcTLXdTT4Gq4mWu6mnwNVxMtd1NPgariZa7qafA1XEy13U0+BquJlrupp8DVcTLXdTT4Gq4mWu6mnwNVxMtd1NPgariZe7qafA1XEy13U0+BquL7xT/APGn4dVdZwWiji//2Q==</span>)</div></div><div class="ace_line_group" style="height:392px"><div class="ace_line" style="height:28px">[<span class="ace_string">![NSolid</span>](<span class="ace_markup ace_underline">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQIAAADDCAMAAABeUu/HAAAAilBMVEXGDDH////FCzDFDTH6/f/afZHEACfFCzT+/vvbj5/XaoL8//++ACT/9/vICSrUfIzEACy/Dy3GACzDACPFC</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">zXw//7//P/JDzG8CinaaYLw9/X8+P7ei6HFADa/DTK0ES/UjZb5/vevACTgeI3Wc4rgqLXmvcbVeYe4AB3SYn/88fa4DifHACTgjJzALAVnAAAFtUlEQVR4nO2dC3faOBCFRw4JtCZZQyFxNru02aavffz/v7exIYmwNNLoYYO</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">de3tOS6XR3NGHsYItCFFXF2na3Sw/XpfKroX6UK1SHXLLIAAEQAAEQJCOgGgKCBLlQ7Be3SU69FO3QEUr7TET974RtG0jRFBklQhBokeLIEu1ewFBiyDrASFB4DUzy9FaLto/ruj968WdUOvTXtSiKfokPRc4kxj1HDdQULSt4</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">Wg4EAABEEQicEWPEEGY/IP8CAItLTWkZkjKBARAAAQEBAQE2lCeg/+qUeqb5URFrYT2LEwfEJw/gjwCAiAAAo+AAAiAgICApoHgwv/T06ArQuJFnhgJjFIQBN9QS73QFSEgAAIgoLNDYBAYGAFjbJShxfWzv0A6+cTnz5Jlsgj</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">kIUAABEBAE0ZwtF0r9/ZD6XsEUbH5ynIJCIAACAgIKP92VvElk/NBEG3MPI3ztKtGtjU4UsyKLhoZ4mA0vycEjBIRZKkhVUAABDYFvZz6/0jGCRR2RmmPAoYAEAABEADBBBAYF5OYTgEC1/AiWv7hpqXWDARAAARAAATMjJ04X</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">M39b8bvX0AABCdH4HIfSqdF4HQfTF4EzuZeEBTsf0TN/SI1Sg67lRKzcGktgjERx/RIEJju40Mgzpo4hyyz9DsAQa8InLP0I7C8kAzN7do0mm+YXkv0IXZzV9/c/84heFB//Hm322gOUjUGR9GbuW+400DrPGBaNdK/A6ZtWBm</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">nGL9Wn+v7Bfc+aVt+2d3UfoNod/FwbcJ0ZdeSafdrV/+65hA8Lr789fOQetko2iVVy6vXOdJlZn39+vRtxr0QbtX3p6fcjqkiptholeWiLGdc53Z7qzg+pxLNcut29vxkM3ooy2cE2S3TlP0oGJ+AAAiAQAGBAgIFBAoIFBAoI</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">FBAoIBAAYECAgUECggUECggUECggEABgQICBQTPorJVc3/jcIujdKmNcgbMFo/lA3cjobmPUG6PE3ocPeWEDzfGkD9cl6Dv8bHcbhkEbQ9XOJOw+5Aph7tHZfQZ0fRbZl3++PHtmjsKrtX3y6fcjqmiT5m1rn/++ptDMFMfPtd</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">1Uv6r/T/LDKUeROtG1dqqqiiqotKld+pq7tNXTZ6ru/rTR3aLRbO/YL16iX4xrsx8b2b641oz69ZTaZsHuCT7hm4ObpfJYQPG2z6U/fccMJ26/vn3fsbdWb5V/9F65XLUf79bWDlGkrkR3S34eDOOS9K4VjG/OkpcSS8SGIcVu</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">BN+HiHeIbds27OsIdKE0g/pMUUwluxWMkcIMwXGzDnL7EdBDgRcmYkI3O3dEMNn/40o2T+q6ZqDuGK3gy1h6C5gLUR6FJjDjzMxPVmlITCOjgQE/qPAyGSpLfNcORsHAj58GAQDCQhYBM6lcUgE/fNhEditB0cwwCFCjPQe6VK</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">j5YzZjG8UFLbEWYZ3psnMmLMBglMgENcmFBAAAff+Awh4m8Qzj9EZ9mlVf7F+R8FbOnfcuSNwfsoOCIAACHzlGA58iDNDQD1SBMwlkxjLPAgsYzrJBRm0gIzfgyyvOFuql4SdtEBw1OwvAgiAYEoIon0CF8XXv8LLFK0FkZ38G</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">EGxoRfOIt8TiZdDVyc/MtazFRAAARDQKBFkXU3Ij6BaCU7mTLFFYZ2W1hBFBgiAAAhoQgiKN/nzAYHH3eIgSPyqsEXRXmDmZyXYbHwIorGdJ4IYZT9yxocgu4CALrS5Hl0/lQ0/wVdB93kKjUmd5c7yGSkC7vQQBA+ZGoIIAcE</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">kEET/fLZ/eG4IYk7piT+iAgEQAAEBAb0bBK5u/1UjwTZsaUShSTpcMAQIRoUgZjgQAAEQkAiB1JOJliKQVlXYO81m456S1mnmTj0WhkTAdAIBEADBgAjEnVqDAEHRHROGoHA1M/liEERLdGc5yaGHovMKCIAACOjdIHAV0edVo</span></div><div class="ace_line" style="height:28px"><span class="ace_markup ace_underline">7OY/F5AAARAQEBAU0PwPy8AK5GElkjKAAAAAElFTkSuQmCC</span>)</div></div><div class="ace_line_group" style="height:28px"><div class="ace_line" style="height:28px"><span class="ace_markup ace_heading ace_2">##</span><span class="ace_heading"> И ПОСЛУШАЙТЕ ВЕЛИКОГО ГЕНИЯ ЛЮДОВИКО ЭНАУДИ-ЭКСПИРИЕНС</span></div></div><div class="ace_line_group" style="height:28px"><div class="ace_line" style="height:28px"></div></div><div class="ace_line_group" style="height:28px"><div class="ace_line" style="height:28px"></div></div><div class="ace_line_group" style="height:28px"><div class="ace_line" style="height:28px"></div></div><div class="ace_line_group" style="height:28px"><div class="ace_line" style="height:28px"></div></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="left: 4px; top: 0px; width: 7px; height: 28px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 28px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 28px; height: 3136px;"></div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 28px; left: 47px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 28px; width: 1207px;"></div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;"></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div>
+</div>
+<div id="preview1" class="g-b g-b--t1of2 split split-preview" style="height: 1001px;">
+<div id="preview" class="preview-html" preview="" debounce="150"><h1 class="code-line" data-line-start="0" data-line-end="1"><a id="___0"></a>ВЕЛИКИЕ СТРАНЫ СКАНДИНАВИИ</h1>
+<h2 class="code-line" data-line-start="1" data-line-end="2"><a id="_______1"></a>ВСЕМ СОВЕТУЮ УЕЗЖАЙТЕ В НОРВЕГИЮ ИЛИ ФИНЛЯНДИЮ</h2>
+<h2 class="code-line" data-line-start="2" data-line-end="3"><a id="_____2"></a>РАБОТАЙТЕ БРАТЬЯ И БУДЕТЕ БОГАТЫ</h2>
+<h2 class="code-line" data-line-start="3" data-line-end="4"><a id="_____3"></a>ВКЛЮЧАЙТЕ ДАНЗА КУДУРО И КАЙФУЙТЕ</h2>
+<p class="has-line-data" data-line-start="4" data-line-end="8">[<img src="data:image/jpeg;base64,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" alt="NSolid"><br>
+[<img src="data:image/jpeg;base64,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" alt="NSolid"><br>
+[<img src="data:image/jpeg;base64,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" alt="NSolid"><br>
+[<img src="data:image/png;base64,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" alt="NSolid"></p>
+<h2 class="code-line" data-line-start="8" data-line-end="9"><a id="______8"></a>И ПОСЛУШАЙТЕ ВЕЛИКОГО ГЕНИЯ ЛЮДОВИКО ЭНАУДИ-ЭКСПИРИЕНС</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="./Online Markdown Editor - Dillinger, the Last Markdown Editor ever._files/monetization.js.Без названия" type="text/javascript"></script>
+<script>
+  (function () {
+    if (typeof _bsa !== 'undefined' && _bsa) {
+      _bsa.init('default', 'CVADP53W', 'placement:dillingerio', {
+        target: '.ad-container',
+        align: 'horizontal',
+        disable_css: 'true'
+      });
+    }
+  })();
+</script>
+<script src="./Online Markdown Editor - Dillinger, the Last Markdown Editor ever._files/main.bundle.js.Без названия" type="text/javascript" async=""></script>
+
+
+</body></html>
