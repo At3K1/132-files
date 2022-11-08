@@ -10,3 +10,5 @@
 9 ексель все таблички
 10 таблицы булевых функций
 11 таблица умножения ексель
+$$A\oplus B=(\overline A	\wedge B) 	\vee (A\wedge \overline B)$$
+![image](https://user-images.githubusercontent.com/114457146/200457963-8f0b07d2-5b1a-4645-a324-0443ac093c26.png)
