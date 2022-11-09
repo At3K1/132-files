@@ -23,6 +23,6 @@ $$ \overline E_1^2=\sqrt \frac{Fa^{x-1}}{(x-1)x}+\alpha_1^{\frac{1}{3}}+\beta_1^
 
 ![image](https://user-images.githubusercontent.com/114457146/200724612-494a7b73-0745-4a68-9619-1efd61831a04.png)
 
-\sin^2\alpha+\cos^2\alpha=1
+$$ \sin^2\alpha+\cos^2\alpha=1 $$
 
 ![image](https://user-images.githubusercontent.com/114457146/200724748-e2f32131-0969-48e9-b94d-c00e8f283dd5.png)
