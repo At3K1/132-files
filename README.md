@@ -50,3 +50,16 @@ $$ \overline E_1^2=\sqrt \frac{Fa^{x-1}}{(x-1)x}+\alpha_1^{\frac{1}{3}}+\beta_1^
 $$ \sin^2\alpha+\cos^2\alpha=1 $$
 
 ![image](https://user-images.githubusercontent.com/114457146/200724748-e2f32131-0969-48e9-b94d-c00e8f283dd5.png)
+
+```mermaid
+graph LR
+    A[(10 класс)] --> B(Переводные)
+    B --> C[(11 класс)]
+    C-->D(Еге по ослу)
+    D --> H(Women moment)
+    D-->R(Cool man)
+    R -->|Плохо|F[Aрмия]
+    R -->|Данза кудуро| E[Универ]
+    D -->|Пересдача|D
+    H-->|Bad way|U(Go cooking)
+    H-->|Right way|M(Chill)
