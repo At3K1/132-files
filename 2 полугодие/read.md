@@ -71,8 +71,8 @@ goto()- идти на позицю (x,y);
 dot()- поставить точку, в скобках толщшина точки;
 done()- закончить рисование.
 Пример кода:
-```py
 
+```py
 from turtle import *
 left(90)
 for i in range (7):
@@ -107,6 +107,7 @@ done()
 Выводим счетчик правильных занчений, если число удовлетворяет всем проверкам, пишем количество таких чисел;
 
 Пример кода:
+
 ```py
 from itertools import product
 nums=product('01234567',repeat=6)
@@ -127,8 +128,8 @@ print(k)
 Пояснения к 12 задаче:
 
 Пример кода:
-```py
 
+```py
 spisok=[]
 for num in range(2,1000):
     if all(num%delit!=0 for delit in range (2, num-1)):
